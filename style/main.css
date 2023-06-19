@@ -2,85 +2,216 @@
 
 * {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;   
+    padding: 0;    
+    box-sizing: border-box;
+    --color-lblue: rgb(139,195,245);
+    --color-dblue: #1294b8;   
 
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-h1,h2,p,a,img,form {
+
+h1,h2,h3,p,a,img,button,input {
    font-family:'Poppins', sans-serif ;
 }
 
-img {
-   object-fit: cover;
-   object-position: 50% 50%;
-   width: 100%;
-   height: 100%;
-}
-/*Section home*/
-#home {
-    min-height: 100vh;
-    background: radial-gradient(rgb(139,195,245), #1294b8);
-}
-#titre-home {
-    font-size: 1.2em ;
-    font-weight: bold ;
-}
-#article-home {
-    display: flex;    
-    flex-direction: row;
-    justify-content:space-around;
-    padding: 3.5% 10%; 
-}
-#article-home article {    
-    flex: 1;
-    border: 1px solid #7f7f7f;
-    margin: 30px;
-}
-#article-home article > h2 {
-    font-size: 2.5em;
-}
-#article-home article > p {
-    padding: 5% 0%;
-}
-#article-home article > form {
-    display: inline-flex;
-}
-#article-home aside {
-    flex: 1;
+
+a {
+    text-decoration: none;
 }
 
-aside img {
-    border: 1px solid #7f7f7f;   
+li {
+    list-style: none;
 }
-/* Header */
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content:space-around;
-    padding: 20px;  
-    color: beige;
+/*pour etre sur que le style de font définie se propage aux élèments du formulaire 
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  width: 150px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-nav > ul {
+*/
+/* COMMON */
+img {
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.cards{
     display: flex;
     flex-direction: row;
     justify-content: center;
-        
+    gap: 40px;
+    flex-wrap: wrap;
+    padding-bottom: 4%;
+
 }
-header  a{
-    text-decoration: none;
-    color: beige;
-}
-nav li {
-    list-style: none    ;
-    padding: 2px 0;
+.card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.nav-title {
-    padding: 15px;  
-    text-transform: uppercase;
-}
-header div {
+/*toutes les sections sauf celle dont l'id est home */
+section:not(#home) {
+    min-height: 100vh; /*vh=Viewport height - very useful ; more less useful : vw=Viewport Widht */
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 7%;
+
+}
+
+
+/*Section home*/
+#home {
+    background: radial-gradient(var(--color-lblue),var(--color-dblue));
+    padding-bottom: 40px;
+}
+
+header {
+    padding: 20px 7%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: beige;
+    text-decoration: none;
+}
+ nav>ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+ }
+
+ nav a{
+    padding: 10px;
+    text-transform: uppercase;
+    color: beige;
+ }
+
+ nav a:hover {
+    color: lightgray;
+ }
+#home-rs > a {
+    color: beige;
+    padding: 7px;
+}
+
+
+#home-content {
+    padding: 0 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6%;
+}
+
+#home-agency-container {
+    flex: 2;
+}
+
+#home-agency-container > p {
+    padding: 4% 0;
+}
+#home-agency-container > h2 {
+    font-size: 2.4em;
+}
+#home-agency-container > form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    background-color: white;
+    border-radius: 2.2em;
+    
+}
+
+#home-agency-container > form > input {
+    flex: 1;
+    border: none;
+    padding-left: 0.9em;
+    background-color: transparent;
+}
+#home-agency-container > form > input:focus-visible {
+    outline: none;
+}
+
+#home-agency-container > form > button {
+    color: white;
+    text-transform: uppercase;
+    background-color: var(--color-dblue);
+    padding: 0.8em;
+    font-size: 0.6em;
+    border: none;
+    border-radius: 2.2em;
+}
+
+#home-agency-container > form > button:hover {
+    background-color: var(--color-lblue);
+    cursor: pointer;
+}
+
+#home-image-container{
+    padding: 50px 0;
+    flex: 3;
+    min-width: 50%;
+}
+
+
+/*section 2 : products features */
+#features >p {
+    padding: 2% 0;
+    color: lightslategray;
+}
+
+.features-card {
+    background: radial-gradient(var(--color-lblue),var(--color-dblue));
+    border-radius: 10px;
+    padding: 60px 30px ;
+    color: white;
+    min-width: 200px;
+    max-width: 25%;
+
+}
+.features-card:hover {
+    transition: 0.2s ease-in-out;
+    translate: 0 -10px;
+}
+.features-card > h3 {
+    padding: 30px 0 ;
+}
+
+/* section3 : la Team */
+
+.team-card  {
+     border: 2px solid black;
+     min-width: 150px;
+     max-width: 20%;
+     
+}
+.team-photo {      
+    overflow: hidden;
+    border-radius: 50%;
+}
+.team-photo > img {   
+    filter: grayscale(1);
+      
+}
+
+.team-photo > img:hover {
+    filter: grayscale(0);
+    transform: scale(1.15);   
 }
