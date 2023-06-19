@@ -220,3 +220,14 @@ header {
     filter: grayscale(0);
     transform: scale(1.15);   
 }
+
+/* section4#clients : effet parallax */
+
+.parallax-effect {
+    background-image: url("../img/parallax.png");
+    width: : 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
