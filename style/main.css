@@ -186,6 +186,11 @@ header {
     max-width: 25%;
 
 }
+
+.features-card > i {
+    font-size: 3em;
+}
+
 .features-card:hover {
     transition: 0.2s ease-in-out;
     translate: 0 -10px;
