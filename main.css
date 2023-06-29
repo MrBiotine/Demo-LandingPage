@@ -1,0 +1,346 @@
+/* GLOBAL */
+
+* {
+    margin: 0;
+    padding: 0;    
+    box-sizing: border-box;
+    --color-lblue: rgb(139,195,245);
+    --color-dblue: #1294b8;   
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+h1,h2,h3,p,a,img,form,button,input {
+   font-family:'Poppins', sans-serif ;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+/*pour etre sur que le style de font définie se propage aux élèments du formulaire 
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  width: 150px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+*/
+/* COMMON */
+img {
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding-bottom: 4%;
+
+}
+.card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*toutes les sections sauf celle dont l'id est home */
+section:not(#home) {
+    min-height: 100vh; /*vh=Viewport height - very useful ; more less useful : vw=Viewport Widht */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 7%;
+
+}
+
+
+/*Section home*/
+#home {
+    background: radial-gradient(var(--color-lblue),var(--color-dblue));
+    padding-bottom: 40px;
+}
+
+header {
+    padding: 20px 7%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: beige;
+    text-decoration: none;
+}
+ nav>ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+ }
+
+ nav a{
+    padding: 10px;
+    text-transform: uppercase;
+    color: beige;
+ }
+
+ nav a:hover {
+    color: lightgray;
+ }
+#home-rs > a {
+    color: beige;
+    padding: 7px;
+}
+
+
+#home-content {
+    padding: 0 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6%;
+}
+
+#home-agency-container {
+    flex: 2;
+}
+
+#home-agency-container > p {
+    padding: 4% 0;
+}
+#home-agency-container > h2 {
+    font-size: 2.4em;
+}
+#home-agency-container > form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    background-color: white;
+    border-radius: 2.2em;
+    
+}
+
+#home-agency-container > form > input {
+    flex: 1;
+    border: none;
+    padding-left: 0.9em;
+    background-color: transparent;
+}
+#home-agency-container > form > input:focus-visible {
+    outline: none;
+}
+
+#home-agency-container > form > button {
+    color: white;
+    text-transform: uppercase;
+    background-color: var(--color-dblue);
+    padding: 0.8em;
+    font-size: 0.6em;
+    border: none;
+    border-radius: 2.2em;
+}
+
+#home-agency-container > form > button:hover {
+    background-color: var(--color-lblue);
+    cursor: pointer;
+}
+
+#home-image-container{
+    padding: 50px 0;
+    flex: 3;
+    min-width: 50%;
+}
+
+
+/*section 2 : products features */
+
+#features >p {
+    padding: 2% 0;
+    color: lightslategray;
+}
+
+.features-card {
+    background: radial-gradient(var(--color-lblue),var(--color-dblue));
+    border-radius: 10px;
+    padding: 60px 30px ;
+    color: white;
+    min-width: 200px;
+    max-width: 25%;
+
+}
+
+.features-card > i {
+    font-size: 3em;
+}
+
+.features-card:hover {
+    transition: 0.2s ease-in-out;
+    translate: 0 -10px;
+}
+.features-card > h3 {
+    padding: 30px 0 ;
+}
+
+/* section3 : la Team */
+#team > p {
+    padding: 2% 0;
+}
+
+.team-card  {     
+     padding: 50px 20px ;
+     min-width: 150px;
+     max-width: 20%;
+     
+}
+#team-card >p {
+    padding: 2% 0;
+    color: lightslategray;
+}
+
+.team-photo {      
+    overflow: hidden;
+    border-radius: 50%;
+}
+.team-photo > img {         
+    filter: grayscale(1);       
+      
+}
+.vertical-rs {
+    position: relative;
+    right: 60%;
+    top: -60%;
+    display: flex;
+    flex-direction: column;     
+    
+  }
+
+.team-photo > img:hover {
+    filter: grayscale(0) ;
+    transition: 0.3s ease-in-out ;
+    transform: scale(1.15);   
+}
+
+.team-photo:hover .vertical-rs {
+     
+    transition: 0.3s ease-in-out ;
+    transform: translateX(20%) scale(2) ; 
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+
+
+/* section4#parallax : effet parallax */
+
+#parallax {
+    justify-content: center;
+}
+
+.parallax-effect {  
+    background-image: url(../img/parallax.png);
+    min-height: 100vh;
+    min-width: 90vw; 
+    filter: contrast(80%) brightness(40%);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+.parallax-card { 
+    background-color:transparent;
+    position: absolute;
+    color: beige;
+    width: 80%;      
+}  
+.parallax-card h2 {
+    font-size: 2em;
+    padding: 2% 0;
+}
+.parallax-card p {
+    padding: 2% 0;
+}
+.parallax-card > form > button {
+    color: beige;
+    background-color: transparent;    
+    padding: 0.8em;
+    font-size: 1.2em;
+    border: 1px solid beige;
+    border-radius: 5px;
+    
+}
+
+.parallax-card > form > button:hover {
+    transition: 0.3s ease-in-out;
+    translate: 0 -5px;
+    color: black;
+    background-color: beige;
+    cursor: pointer;
+}
+
+/* section clients */
+
+#clients > p {
+    padding: 2% 0;
+}
+
+.client-card  {     
+     padding: 25px 10px ;
+     min-width: 100px;
+     max-width: 15%;
+     
+}
+.client-img img {         
+    filter: contrast(80%) brightness(150%);      
+      
+}
+.client-img img:hover {
+    filter: none ;
+    transition: 0.2s ease-in-out ;
+     
+}
+
+/* section creativity */
+
+#creative-content {
+    padding: 0 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5%;
+}
+
+
+#creative-container{
+    flex: 1;
+
+}
+#creative-container > p {
+    padding: 4% 0;
+}
+
+
+#creative-image-container{
+    padding: 50px 0;
+    flex: 1;
+    min-width: 50%;
+}
